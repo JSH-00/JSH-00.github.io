@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>标签 - Swift - Hexo</title>
+  <title>Swift APPDelegate 文件写法 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 50vh;">
+  <header style="height: 35vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -146,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="标签 - Swift">
+            <span class="h2" id="subtitle" title="Swift APPDelegate 文件写法">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-10 17:00" pubdate>
+        2021年1月10日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      103 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,46 +214,84 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 2 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Swift APPDelegate 文件写法</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-    
-    <a href="/2021/01/10/Swift%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Swift 页面跳转</span>
-      <time style="float: right;">01-10</time>
-    </a>
-  
-</div>
 
-
-
-
-
-              </div>
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Swift APPDelegate 文件写法</h1>
+            
+            <div class="markdown-body">
+              <h2 id="通过导航视图控制器设置根视图"><a href="#通过导航视图控制器设置根视图" class="headerlink" title="通过导航视图控制器设置根视图"></a>通过导航视图控制器设置根视图</h2><p>AppDelegate.swift</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">import</span> UIKit<br><span class="hljs-keyword">@main</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppDelegate</span>: <span class="hljs-title">UIResponder</span>, <span class="hljs-title">UIApplicationDelegate</span> </span>&#123;<br><br>    <span class="hljs-keyword">var</span> window: <span class="hljs-type">UIWindow</span>?<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-keyword">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-comment">// Override point for customization after application launch.</span><br>        <span class="hljs-keyword">self</span>.window <span class="hljs-operator">=</span> <span class="hljs-type">UIWindow</span>(frame: <span class="hljs-type">UIScreen</span>.main.bounds)<br>        <span class="hljs-comment">// 把初始视图控制器压入导航视图控制器</span><br>        <span class="hljs-keyword">let</span> navigationController <span class="hljs-operator">=</span> <span class="hljs-type">UINavigationController</span>(rootViewController: <span class="hljs-type">MyRootViewController</span>())<br>        <span class="hljs-comment">// 把根视图控制器设为导航视图控制器</span><br>        <span class="hljs-keyword">self</span>.window<span class="hljs-operator">?</span>.rootViewController <span class="hljs-operator">=</span> navigationController<br>        <span class="hljs-comment">// 渲染页面</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>    &#125;<br>&#125;    <br></code></pre></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Swift/">Swift</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/01/10/Swift%E9%A1%B5%E9%9D%A2%E8%B7%B3%E8%BD%AC/">
+                        <span class="hidden-mobile">Swift 页面跳转</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://jsh-00.github.io/img/wechatMoney.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
 
     
@@ -304,9 +395,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
