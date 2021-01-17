@@ -187,7 +187,13 @@
             
           
           通过导航视图控制器设置根视图AppDelegate.swift
-1234567891011121314151617import UIKit@mainclass AppDelegate: UIResponder, UIApplicationDelegate &#123;    var window: UIWindow?        func application(_ application: U
+import UIKit
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate &#123;
+
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFi
         </a>
       </p>
 
@@ -228,7 +234,14 @@
           
             
           
-          Swift 页面跳转1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465    override func viewDidLoad() &#123;    super.viewDidLoad()        
+          Swift 页面跳转    
+override func viewDidLoad() &#123;
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
+    // 每次当前视图控制器创建一次，全局变量加一
+    pageNum = pageNum + 1
+    //      
         </a>
       </p>
 
@@ -270,7 +283,10 @@
             
           
           Git 基本命令zsh 简写gco == git checkoutga . == git add .gcmsg &quot;add log&quot; == git commit -m “addlog”git checkout -b feature-branch-name  // 切分支
-新建并切换仓库123456git initgit add .git commit -m ‘first comm
+新建并切换仓库git init
+git add .
+git commit -m ‘first commit’
+
         </a>
       </p>
 

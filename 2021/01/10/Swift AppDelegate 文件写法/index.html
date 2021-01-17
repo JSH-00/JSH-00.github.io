@@ -29,7 +29,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/hybrid.min.css" />
     
   
 
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      103 字
+      104 字
     </span>
   
 
@@ -228,7 +228,23 @@
             
             <div class="markdown-body">
               <h2 id="通过导航视图控制器设置根视图"><a href="#通过导航视图控制器设置根视图" class="headerlink" title="通过导航视图控制器设置根视图"></a>通过导航视图控制器设置根视图</h2><p>AppDelegate.swift</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">import</span> UIKit<br><span class="hljs-keyword">@main</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppDelegate</span>: <span class="hljs-title">UIResponder</span>, <span class="hljs-title">UIApplicationDelegate</span> </span>&#123;<br><br>    <span class="hljs-keyword">var</span> window: <span class="hljs-type">UIWindow</span>?<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-keyword">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> &#123;<br>        <span class="hljs-comment">// Override point for customization after application launch.</span><br>        <span class="hljs-keyword">self</span>.window <span class="hljs-operator">=</span> <span class="hljs-type">UIWindow</span>(frame: <span class="hljs-type">UIScreen</span>.main.bounds)<br>        <span class="hljs-comment">// 把初始视图控制器压入导航视图控制器</span><br>        <span class="hljs-keyword">let</span> navigationController <span class="hljs-operator">=</span> <span class="hljs-type">UINavigationController</span>(rootViewController: <span class="hljs-type">MyRootViewController</span>())<br>        <span class="hljs-comment">// 把根视图控制器设为导航视图控制器</span><br>        <span class="hljs-keyword">self</span>.window<span class="hljs-operator">?</span>.rootViewController <span class="hljs-operator">=</span> navigationController<br>        <span class="hljs-comment">// 渲染页面</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span><br>    &#125;<br>&#125;    <br></code></pre></td></tr></table></figure>
+<div class="hljs code-wrapper"><pre><code class="hljs swift"><span class="hljs-keyword">import</span> UIKit
+<span class="hljs-keyword">@main</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppDelegate</span>: <span class="hljs-title">UIResponder</span>, <span class="hljs-title">UIApplicationDelegate</span> </span>&#123;
+
+    <span class="hljs-keyword">var</span> window: <span class="hljs-type">UIWindow</span>?
+    
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-keyword">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: <span class="hljs-keyword">Any</span>]?)</span></span> -&gt; <span class="hljs-type">Bool</span> &#123;
+        <span class="hljs-comment">// Override point for customization after application launch.</span>
+        <span class="hljs-keyword">self</span>.window <span class="hljs-operator">=</span> <span class="hljs-type">UIWindow</span>(frame: <span class="hljs-type">UIScreen</span>.main.bounds)
+        <span class="hljs-comment">// 把初始视图控制器压入导航视图控制器</span>
+        <span class="hljs-keyword">let</span> navigationController <span class="hljs-operator">=</span> <span class="hljs-type">UINavigationController</span>(rootViewController: <span class="hljs-type">MyRootViewController</span>())
+        <span class="hljs-comment">// 把根视图控制器设为导航视图控制器</span>
+        <span class="hljs-keyword">self</span>.window<span class="hljs-operator">?</span>.rootViewController <span class="hljs-operator">=</span> navigationController
+        <span class="hljs-comment">// 渲染页面</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    &#125;
+&#125;</code></pre></div>
             </div>
             <hr>
             <div>
