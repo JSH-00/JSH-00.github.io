@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Hexo 常用命令</title>
+    <link href="/2021/01/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <url>/2021/01/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h1><h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span></code></pre></div><h2 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo s</span></code></pre></div><h2 id="生成并部署"><a href="#生成并部署" class="headerlink" title="生成并部署"></a>生成并部署</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d -g</span></code></pre></div><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h3><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">hexo</span> server -p <span class="hljs-number">5000</span></code></pre></div><h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> server -i <span class="hljs-number">192.168.1.1</span></code></pre></div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Swift APPDelegate 文件写法</title>
     <link href="/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/"/>
     <url>/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/</url>
