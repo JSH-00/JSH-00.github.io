@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Hexo 常用命令 - Billie&#39;s Technology Sharing</title>
+  <title>设置 UIButton 文字与图片距离 - Billie&#39;s Technology Sharing</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo 常用命令">
+            <span class="h2" id="subtitle" title="设置 UIButton 文字与图片距离">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-17 20:00" pubdate>
-        2021年1月17日 晚上
+      <time datetime="2021-02-22 20:00" pubdate>
+        2021年2月22日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      48 字
+      82 字
     </span>
   
 
@@ -224,14 +224,15 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo 常用命令</h1>
+            <h1 style="display: none">设置 UIButton 文字与图片距离</h1>
             
             <div class="markdown-body">
-              <h1 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h1><h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span></code></pre></div>
-<h2 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo s</span></code></pre></div>
-<h2 id="生成并部署"><a href="#生成并部署" class="headerlink" title="生成并部署"></a>生成并部署</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d -g</span></code></pre></div>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h3><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">hexo</span> server -p <span class="hljs-number">5000</span></code></pre></div>
-<h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> server -i <span class="hljs-number">192.168.1.1</span></code></pre></div>
+              <h1 id="设置UIButton图片大小、文字与图片距离"><a href="#设置UIButton图片大小、文字与图片距离" class="headerlink" title="设置UIButton图片大小、文字与图片距离"></a>设置UIButton图片大小、文字与图片距离</h1><div class="hljs code-wrapper"><pre><code class="hljs awk">CGFloat padding = <span class="hljs-number">0</span>; <span class="hljs-regexp">//</span> 设置图片与文字的距离
+CGFloat zoom = <span class="hljs-number">8</span>; <span class="hljs-regexp">//</span> 设置图片缩放大小
+btn.titleEdgeInsets = UIEdgeInsetsMake(<span class="hljs-number">0</span>, padding<span class="hljs-regexp">/2, 0, -padding/</span><span class="hljs-number">2</span>);
+btn.imageEdgeInsets = UIEdgeInsetsMake(zoom, -padding<span class="hljs-regexp">/2 - 16, zoom, padding/</span><span class="hljs-number">2</span>);
+[btn.imageView setContentMode:UIViewContentModeScaleAspectFit]; <span class="hljs-regexp">//</span> 使图片缩放后不变形
+btn.adjustsImageWhenHighlighted = NO; <span class="hljs-regexp">//</span> 点击后button图片不变灰</code></pre></div>
             </div>
             <hr>
             <div>
@@ -241,7 +242,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                      <a class="hover-with-bg" href="/tags/OC/">OC</a>
                     
                   </div>
                 
@@ -254,9 +255,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/18/MAC%20%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%96%B9%E6%B3%95/">
+                      <a href="/2021/02/22/21/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MAC 设置代理方法</span>
+                        <span class="hidden-mobile">OC中点语法 . 和 -> 的区别</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -264,8 +265,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/">
-                        <span class="hidden-mobile">Swift APPDelegate 文件写法</span>
+                      <a href="/2021/02/01/21/GCD%20dispatch/">
+                        <span class="hidden-mobile">GCD dispatch</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
