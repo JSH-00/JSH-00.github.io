@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>关于 - Billie&#39;s Technology Sharing</title>
+  <title>UITableViewCell 注册重用 - Billie&#39;s Technology Sharing</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -33,6 +33,8 @@
     
   
 
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
 
 
@@ -160,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="关于">
+            <span class="h2" id="subtitle" title="UITableViewCell 注册重用">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-13 20:00" pubdate>
+        2021年3月13日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      195 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -175,52 +214,122 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif"
-                   class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Billie</div>
-    <div class="about-intro">A developer, a iOSer.</div>
-    <div class="about-icons">
-      
-        
-        
-        
-        <a target="_blank" rel="noopener" href="https://github.com/JSH-00" class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
-      
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">UITableViewCell 注册重用</h1>
+            
+            <div class="markdown-body">
+              <h1 id="UITableViewCell-注册重用"><a href="#UITableViewCell-注册重用" class="headerlink" title="UITableViewCell 注册重用"></a>UITableViewCell 注册重用</h1><div class="hljs code-wrapper"><pre><code class="hljs objectivec"><span class="hljs-keyword">static</span> <span class="hljs-built_in">NSString</span> * cellID = <span class="hljs-string">@&quot;TcellID&quot;</span>;
+
+<span class="hljs-meta"># <span class="hljs-meta-keyword">pragma</span> mark 注册 GestureTableViewCell</span>
+[gestureTable registerClass:[GestureTableViewCell <span class="hljs-keyword">class</span>] forCellReuseIdentifier:<span class="hljs-string">@&quot;TcellID&quot;</span>];
+
+<span class="hljs-meta"># <span class="hljs-meta-keyword">pragma</span> mark 根据注册的 cellID 重用已注册的 cell</span>
+GestureTableViewCell *cell = [<span class="hljs-keyword">self</span>.gestureTable dequeueReusableCellWithIdentifier:cellID];
+
+<span class="hljs-meta"># <span class="hljs-meta-keyword">pragma</span> mark 若 cell 未定义，则重用已注册的TcellID</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">nil</span> == cell) &#123;
+    cell = [[GestureTableViewCell alloc] initWithStyle:<span class="hljs-built_in">UITableViewCellStyleSubtitle</span> reuseIdentifier:cellID];
+&#125;</code></pre></div>
+<h2 id="未重用导致的问题："><a href="#未重用导致的问题：" class="headerlink" title="未重用导致的问题："></a>未重用导致的问题：</h2><ul>
+<li>UITableViewCell 异常</li>
+<li>明明按照 index 返回不同的 cell，但多个 cell 内容都重叠在一起</li>
+<li>点击 cell 后，上面的 label 等内容会消失</li>
+<li>上下滑动后，上面的 label 等内容会消失</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="MyTableViewCell-m"><a href="#MyTableViewCell-m" class="headerlink" title="MyTableViewCell.m"></a>MyTableViewCell.m</h3><div class="hljs code-wrapper"><pre><code class="hljs verilog">+ (instancetype)cellWithTableView:(UITableView *)tableView CellModel:(MyCellModel *)myCellModel &#123;
+    <span class="hljs-keyword">static</span> NSString *identifier = @<span class="hljs-string">&quot;myFirstCell&quot;</span>;
+    MyTableViewCell *<span class="hljs-keyword">cell</span> = [tableView dequeueReusableCellWithIdentifier:identifier];
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">cell</span> == nil) &#123;
+        <span class="hljs-keyword">cell</span> = [[MyTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        [<span class="hljs-keyword">cell</span> setUI];
+    &#125;
+    <span class="hljs-keyword">cell</span><span class="hljs-variable">.model</span> = myCellModel;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">cell</span>;
+&#125;</code></pre></div>
+<h3 id="MyTableViewController-m"><a href="#MyTableViewController-m" class="headerlink" title="MyTableViewController.m"></a>MyTableViewController.m</h3><div class="hljs code-wrapper"><pre><code class="hljs groovy">- (UITableViewCell *)<span class="hljs-attr">tableView:</span>(UITableView *)tableView <span class="hljs-attr">cellForRowAtIndexPath:</span>(NSIndexPath *)indexPath &#123;
+    <span class="hljs-keyword">return</span> [MyTableViewCell <span class="hljs-attr">cellWithTableView:</span>tableView <span class="hljs-attr">CellModel:</span>model];
+&#125;</code></pre></div>
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/OC/">OC</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">UIScrollView 向下偏移</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
+                        <span class="hidden-mobile">OC 中点语法 . 和 -> 的区别</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
   </div>
 </div>
 
-<article class="mt-5 markdown-body">
-  <h4 id="颜值不行，代码求精，撸码媛-iOSer-一头。"><a href="#颜值不行，代码求精，撸码媛-iOSer-一头。" class="headerlink" title="颜值不行，代码求精，撸码媛 iOSer 一头。"></a>颜值不行，代码求精，撸码媛 iOSer 一头。</h4><h4 id="有问题欢迎联系：-x42-105-x6c-x6c-x69-x65-x4a-x69-x40-x31-x36-x33-x2e-99-111-x6d"><a href="#有问题欢迎联系：-x42-105-x6c-x6c-x69-x65-x4a-x69-x40-x31-x36-x33-x2e-99-111-x6d" class="headerlink" title="有问题欢迎联系：&#x42;&#105;&#x6c;&#x6c;&#x69;&#x65;&#x4a;&#x69;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;"></a>有问题欢迎联系：<a href="mailto:&#x42;&#105;&#x6c;&#x6c;&#x69;&#x65;&#x4a;&#x69;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;">&#x42;&#105;&#x6c;&#x6c;&#x69;&#x65;&#x4a;&#x69;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#x6d;</a></h4>
-</article>
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://jsh-00.github.io/img/wechatMoney.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
 
 
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
 
     
@@ -324,7 +433,11 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
 
