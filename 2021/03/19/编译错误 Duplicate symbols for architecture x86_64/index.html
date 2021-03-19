@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>归档 - Billie&#39;s Technology Sharing</title>
+  <title>编译错误 Duplicate symbols for architecture x86_64 - Billie&#39;s Technology Sharing</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/hybrid.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -146,9 +162,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="编译错误 Duplicate symbols for architecture x86_64">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-19 20:00" pubdate>
+        2021年3月19日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      209 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      2
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -161,58 +214,104 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 14 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">OC 中点语法 . 和 -&gt; 的区别</span>
-      <time style="float: right;">02-22</time>
-    </a>
-  
-    
-    <a href="/2021/02/22/%E8%AE%BE%E7%BD%AE%20UIButton%20%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E7%89%87%E8%B7%9D%E7%A6%BB/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">设置 UIButton 文字与图片距离</span>
-      <time style="float: right;">02-22</time>
-    </a>
-  
-    
-    <a href="/2021/02/01/GCD%20dispatch/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">GCD dispatch</span>
-      <time style="float: right;">02-01</time>
-    </a>
-  
-    
-    <a href="/2021/02/01/UISegmentedControl/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">UISegmentedControl</span>
-      <time style="float: right;">02-01</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">编译错误 Duplicate symbols for architecture x86_64</h1>
+            
+            <div class="markdown-body">
+              <h1 id="编译错误-Duplicate-symbols-for-architecture-x86-64"><a href="#编译错误-Duplicate-symbols-for-architecture-x86-64" class="headerlink" title="编译错误 Duplicate symbols for architecture x86_64"></a>编译错误 Duplicate symbols for architecture x86_64</h1><h2 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息"></a>错误信息</h2><div class="hljs code-wrapper"><pre><code class="hljs awk">......<span class="hljs-regexp">/*Objects-normal/</span>x86_64/XXXX.o
+ld: <span class="hljs-number">415</span> duplicate symbols <span class="hljs-keyword">for</span> architecture x86_64
+clang: error: linker command failed with <span class="hljs-keyword">exit</span> code <span class="hljs-number">1</span> (use -v to see invocation)
+</code></pre></div>
+<blockquote>
+<p>翻译：<br>错误信息是在链接 XXXX.o 时出错<br>ld: 在 x86-64 架构下有 415 个重复符号</p>
+</blockquote>
+<h2 id="可能触发该问题的两种情况"><a href="#可能触发该问题的两种情况" class="headerlink" title="可能触发该问题的两种情况"></a>可能触发该问题的两种情况</h2><h3 id="情况一："><a href="#情况一：" class="headerlink" title="情况一："></a>情况一：</h3><ul>
+<li>触发原因：<br>由于重复导入了某文件项目中重复导入了某些文件, 一般在导入三方库时可能会重复导入</li>
+<li>解决办法：<br>只需要在文件目录中查找到重复导入的文件，删掉即可。或将整个三方库删除掉，重新拖入，或者用 cocopods install</li>
+</ul>
+<h3 id="情况二："><a href="#情况二：" class="headerlink" title="情况二："></a>情况二：</h3><ul>
+<li>触发原因：<br>在项目的某些地方需要 <code>#import&quot;XXXX.h&quot;</code> 而用了 <code>#import&quot;XXXX.m&quot;</code>。</li>
+<li>解决办法：<br>核对项目</li>
+</ul>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/OC/">OC</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/19/%20UIAlertController%20%E5%BC%B9%E7%AA%97/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">UIAlertController 弹窗</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">
+                        <span class="hidden-mobile">UIScrollView 向下偏移</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://jsh-00.github.io/img/wechatMoney.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
     
 
     
@@ -316,9 +415,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
