@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>简单工厂模式</title>
+    <link href="/2021/05/13/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <url>/2021/05/13/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    
+    <content type="html"><![CDATA[<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p><a href="https://github.com/JSH-00/OCSimpleFactoryPattern">Demo链接</a></p><h2 id="基本实现原理"><a href="#基本实现原理" class="headerlink" title="基本实现原理"></a>基本实现原理</h2><p>创建一个工厂，外界只需告诉工厂所需要的产品，工厂就会自动按照生产流程，返回产品给外界。</p><h2 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h2><h3 id="Factory"><a href="#Factory" class="headerlink" title="Factory"></a>Factory</h3><p>对外暴露创建商品的方法，入参为商品类型，返回值为遵循产品协议的 id 指针。<br>方法内部处理，判断商品类型对应的枚举类型，创建对应的商品并返回指针。</p><h3 id="protocol"><a href="#protocol" class="headerlink" title="protocol"></a>protocol</h3><p>定义产品拥有的属性及方法</p><h3 id="用枚举类型区分工厂内不同的产品"><a href="#用枚举类型区分工厂内不同的产品" class="headerlink" title="用枚举类型区分工厂内不同的产品"></a>用枚举类型区分工厂内不同的产品</h3><p>把枚举封装成 class 解耦</p><h3 id="具体产品"><a href="#具体产品" class="headerlink" title="具体产品"></a>具体产品</h3><p>遵循 protocol 实现方法和属性，属性用 synthesize 定义<br> <code>@synthesize numberA = _numberA;</code></p><h3 id="调用"><a href="#调用" class="headerlink" title="调用"></a>调用</h3><p>import Factory class，实现 Factory create 方法。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>设计模式</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>UIAlertController 弹窗</title>
     <link href="/2021/03/19/%20UIAlertController%20%E5%BC%B9%E7%AA%97/"/>
     <url>/2021/03/19/%20UIAlertController%20%E5%BC%B9%E7%AA%97/</url>
