@@ -123,6 +123,36 @@ git stash list // 查看缓存列表
 git stash drop stash@{0} // 删除某stash
 git stash pop stash@{1}  // 恢复指定stash
 ```
+## git merge 和 git rebase
+### git pull
+
+```
+git pull = git fetch + git merge FETCH_HEAD 
+git pull --rebase =  git fetch + git rebase FETCH_HEAD 
+```
+
+### merge 和 rebase
+现在我们有这样的两个分支,test和master，提交如下：
+
+```
+   D---E test
+  /
+A---B---C---F--- master
+```
+在master执行git merge test,然后会得到如下结果：
+
+```
+   D--------E
+  /           \
+A---B---C---F---G--- test, master
+```
+在master执行git rebase test，然后得到如下结果：
+
+```
+A---B---D---E---C‘---F‘--- test, master
+```
+merge操作会生成一个新的节点，之前的提交分开显示。
+而rebase操作不会生成新的节点，是将两个分支融合成一个线性的提交。
 
 ## 多个 Git 切换
 * gitlab 和 github 切换使用
