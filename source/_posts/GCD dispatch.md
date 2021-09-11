@@ -96,7 +96,7 @@ dispatch_barrier_async(queue, ^{
 }
 ```
 ### dispatch_group_enter dispatch_group_leave 
-* 通过 dispatch_group_enter、dispatch_group_leave 控制执行（其他任务开异步加入 queue 即可，不用加入 group）
+* 通过 dispatch_group_enter、dispatch_group_leave 控制执行，在group内部会有一个计数器，调用dispatch_group_enter后，该计数器会 +1，调用 dispatch_group_leave后该计数器会 -1，当计数器为 0 时，则主动调用dispatch_group_notify 的 block，否则一直处于等待中。（其他任务开异步加入 queue 即可，不用加入 group）
 
 ```
 - (void)groupEnterAndLeave {
