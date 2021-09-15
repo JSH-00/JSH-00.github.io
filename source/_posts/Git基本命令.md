@@ -155,26 +155,44 @@ merge操作会生成一个新的节点，之前的提交分开显示。
 而rebase操作不会生成新的节点，是将两个分支融合成一个线性的提交。
 
 ## 多个 Git 切换
-* gitlab 和 github 切换使用
+举例：gitlab 和 github 切换使用，配置步骤如下
 
-### 新建 ~/.ssh/config
-* id_rsa 为 GitLab 密钥
-* github_rsa 为 GitHub 密钥
+### 生成多个密钥
+* 先假设我有两个账号，一个是 github 上的，一个是公司 gitlab 上面的。首先为不同的账号生成不同的ssh-key
+    * `ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -c xxx@gmail.com` 然后根据提示连续回车即可在~/.ssh目录下得到id_rsa_work和id_rsa_work.pub两个文件，id_rsa_work.pub文件里存放的就是我们要使用的key 
+    * `ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -c xxx@gmail.com` 然后根据提示连续回车即可在~/.ssh目录下得到id_rsa_github和id_rsa_github.pub两个文件，id_rsa_gthub.pub文件里存放的就是我们要使用的key
+* 把 id_rsa_xxx.pub 中的 key 添加到 github 或 gitlab 上，这一步在 github 或 gitlab 上都有帮助，不再赘述
 
+### 添加密钥
+* 默认 SSH 只会读取 id_rsa，所以为了让 SSH 识别新的私钥，需要将其添加到 SSH agent
+```
+ssh-add ~/.ssh/id_rsa_work
+ssh-add ~/.ssh/id_rsa_github
+```
+
+### 新建 config 文件
+* 新建 ~/.ssh/config，并写入以下内容，设定不同的git 服务器对应不同的key
+
+config: 
 ```
 # gitlab
-Host gitlab
-	HostName git.zerozero.cn
+Host workgit
+	HostName workgit.cn
 	User git
-	IdentityFile ~/.ssh/id_rsa
+	IdentityFile ~/.ssh/id_rsa_work
 # githab
-Host github.com
+Host github
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/github_rsa
+	IdentityFile ~/.ssh/id_rsa_gthub
 ```
 ### 切换 Git 命令
+* 根据 config 配置的 `Host` 切换 git
+
 ```
-ssh -T github.com
+ssh -T workgit
+```
+
+```
 ssh -T github
 ```
