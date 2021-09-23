@@ -165,6 +165,7 @@ merge操作会生成一个新的节点，之前的提交分开显示。
 
 ### 添加密钥
 * 默认 SSH 只会读取 id_rsa，所以为了让 SSH 识别新的私钥，需要将其添加到 SSH agent
+
 ```
 ssh-add ~/.ssh/id_rsa_work
 ssh-add ~/.ssh/id_rsa_github
