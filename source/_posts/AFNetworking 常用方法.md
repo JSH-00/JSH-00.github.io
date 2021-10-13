@@ -5,6 +5,16 @@ date: 2021-09-11 20:00:00
 tags: OC
 ---
 # AFNetworking 常用方法
+
+## pod 引入
+Podfile
+```
+pod 'AFNetworking', '~> 4.0'
+```
+VC
+```
+#import "AFNetworking.h"
+```
 ## GET 方法获取并显示图片
 ```
 UIImageView *imageNetView = [UIImageView new];
@@ -103,6 +113,7 @@ AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 }
 ```
 #### 解决POST secure connection 问题
+
 报错信息:
 ```
 Error Domain=NSURLErrorDomain Code=-1022 "The resource could not be loaded because the App Transport Security policy requires the use of a secure connection." UserInfo={NSLocalizedDescription=The resource could not be loaded because the App Transport Security policy requires the use of a secure connection...
@@ -110,3 +121,39 @@ Error Domain=NSURLErrorDomain Code=-1022 "The resource could not be loaded becau
 解决方法:
 Info.plist
 Information Property List -> App Transport Security Settings ->Allow Arbitrary Loads:YES
+
+## 实时监听网络
+```
+- (void)AFNReachability
+{
+    //1.创建网络监听管理者
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    //2.监听网络状态的改变
+    /*
+     AFNetworkReachabilityStatusUnknown          = 未知
+     AFNetworkReachabilityStatusNotReachable     = 无网络
+     AFNetworkReachabilityStatusReachableViaWWAN = 3G 4G
+     AFNetworkReachabilityStatusReachableViaWiFi = WIFI
+     */
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"无网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"3G,4G");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WIFI");
+                break;
+            default:
+                break;
+        }
+    }];
+    //3.开始监听
+    [manager startMonitoring];
+}
+```
