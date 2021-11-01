@@ -1,6 +1,6 @@
 ---
 layout: git
-title: 跳转到其他APP (苹果地图 & 高德地图 & phone)
+title: URL Sheme 跳转到其他APP (苹果地图 & 高德地图 & phone)
 date: 2021-06-14 20:00:00
 tags: OC
 ---
@@ -47,4 +47,47 @@ tags: OC
 ```
 [[UIApplication   sharedApplication] openURL:[NSURL URLWithString:@"tel://10010"] options:@{} completionHandler:nil];
 
+```
+
+## 从其他的APP跳转到本 APP
+
+### iOS 13 以前
+```
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    NSLog(@"%s",__func__);
+    NSLog(@"options: %@", options);
+    NSLog(@"URL scheme:%@", [url scheme]);
+    NSLog(@"URL query: %@", [url query]);
+    
+    // 提示并展示query
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"打开URL Scheme成功"
+                                                        message:[url query]
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    
+    return YES;
+}
+```
+### iOS 13 以后
+由于iOS13新增SceneDelegate，微信登录授权回调的时候会走SceneDelegate不会调用AppDelegate的openurl
+```
+-(void)scene:(UIScene*)sceneopenURLContexts:(NSSet *)URLContextsAPI_AVAILABLE(ios(13.0)){
+    NSSet*set = URLContexts;
+
+    [setenumerateObjectsUsingBlock:^(id  _Nonnullobj,BOOL*_Nonnullstop) {
+        if(@available(iOS 13.0, *)) {
+            UIOpenURLContext*context = obj;
+
+            [WXApi handleOpenURL:context.URL delegate:self];
+
+        }else{
+            // Fallback on earlier versions
+
+        }
+
+    }];
+
+}
 ```
