@@ -58,9 +58,13 @@ git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的
 ```
 ## git 回滚操作
 ### 场景1：未 add
-
+撤回修改
 ```
 git checkout .
+```
+删除没有 git add 的文件
+```
+git clean -d fx
 ```
 
 ### 场景2：已经 commit，但是未 push 到远端
@@ -96,6 +100,10 @@ git cherry-pick cf2e245
 ```
 
 ## git branch 操作
+* 拉取指定分支内容
+    * git clone -b dev
+    * git fetch origin dev
+    * git checkout -b dev origin/dev
 * 删除本地分支
     * git branch -D branchName
 * 删除远端分支
@@ -105,9 +113,13 @@ git cherry-pick cf2e245
     * git branch -a
     
 ## git 删除文件
-git rm -r --cached 文件/文件夹名称
-git commit -m "提交说明"
-git push origin master
+* git rm -r --cached 文件/文件夹名称
+## git tag
+* 新建 tag
+    * 可添加描述： git tag <tagname> -a
+    * 无描述：git tag <tagname>
+* 查看 tag
+    * git tag
 
 ## git 暂存
 思想：
