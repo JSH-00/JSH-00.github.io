@@ -111,6 +111,9 @@ git cherry-pick cf2e245
     * git push origin :branchName
 * 查看本地和远程分支
     * git branch -a
+* 强制更新个人分支
+    * git reset --hard origin/develop
+    * git push origin yourbranch --force
     
 ## git 删除文件
 * git rm -r --cached 文件/文件夹名称
@@ -193,11 +196,11 @@ Host workgit
 	HostName workgit.cn
 	User git
 	IdentityFile ~/.ssh/id_rsa_work
-# githab
+# github
 Host github
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/id_rsa_gthub
+	IdentityFile ~/.ssh/id_rsa_github
 ```
 ### 切换 Git 命令
 * 根据 config 配置的 `Host` 切换 git

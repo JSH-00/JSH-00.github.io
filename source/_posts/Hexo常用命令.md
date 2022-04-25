@@ -5,7 +5,10 @@ date: 2021-01-17 20:00:00
 tags: Hexo
 ---
 # Hexo 常用命令
-
+## 安装 Hexo (基于node)
+```
+sudo npm install -g hexo-cli
+```
 ## 清除缓存
 ```
 hexo clean
