@@ -1,5 +1,13 @@
+---
+layout: git
+title: APP 各种状态时发通知调用函数
+date: 2022-03-18 21:00:00
+tags: OC
+---
+
 # APP 各种状态时发通知调用函数
 
+## 举例
 ```
 // 检测app从后台进入前台会的观察者
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
