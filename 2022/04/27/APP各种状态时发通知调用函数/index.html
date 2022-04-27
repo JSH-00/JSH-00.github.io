@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      722 字
+      724 字
     </span>
   
 
@@ -227,7 +227,7 @@
             <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h1 id="APP-各种状态时发通知调用函数"><a href="#APP-各种状态时发通知调用函数" class="headerlink" title="APP 各种状态时发通知调用函数"></a>APP 各种状态时发通知调用函数</h1><div class="hljs code-wrapper"><pre><code class="hljs css">// 检测<span class="hljs-selector-tag">app</span>从后台进入前台会的观察者
+              <h1 id="APP-各种状态时发通知调用函数"><a href="#APP-各种状态时发通知调用函数" class="headerlink" title="APP 各种状态时发通知调用函数"></a>APP 各种状态时发通知调用函数</h1><h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><div class="hljs code-wrapper"><pre><code class="hljs css">// 检测<span class="hljs-selector-tag">app</span>从后台进入前台会的观察者
 <span class="hljs-selector-attr">[[NSNotificationCenter defaultCenter]</span> <span class="hljs-selector-tag">addObserver</span><span class="hljs-selector-pseudo">:self</span> <span class="hljs-selector-tag">selector</span>:<span class="hljs-keyword">@selector</span>(applicationBecomeActive) <span class="hljs-attribute">name:</span>UIApplicationWillEnterForegroundNotification <span class="hljs-attribute">object:</span>nil];
 // 添加检测<span class="hljs-selector-tag">app</span>进入后台的观察者
 <span class="hljs-selector-attr">[[NSNotificationCenter defaultCenter]</span> <span class="hljs-selector-tag">addObserver</span><span class="hljs-selector-pseudo">:self</span> <span class="hljs-selector-tag">selector</span>:<span class="hljs-keyword">@selector</span>(applicationEnterBackground) <span class="hljs-attribute">name:</span> UIApplicationDidEnterBackgroundNotification <span class="hljs-attribute">object:</span>nil];
