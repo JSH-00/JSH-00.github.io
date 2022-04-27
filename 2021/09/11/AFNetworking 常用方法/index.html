@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>AFNetworking 常用方法 - Billie&#39;s Technology Sharing</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/hybrid.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"jsh-00.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"G-XHKH2BBGBT","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 35vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Billie</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="AFNetworking 常用方法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-11 20:00" pubdate>
+        2021年9月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      841 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AFNetworking 常用方法</h1>
+            
+            <div class="markdown-body">
+              <h1 id="AFNetworking-常用方法"><a href="#AFNetworking-常用方法" class="headerlink" title="AFNetworking 常用方法"></a>AFNetworking 常用方法</h1><h2 id="pod-引入"><a href="#pod-引入" class="headerlink" title="pod 引入"></a>pod 引入</h2><p>Podfile</p>
+<div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">pod</span> <span class="hljs-string">&#x27;AFNetworking&#x27;</span>, <span class="hljs-string">&#x27;~&gt; 4.0&#x27;</span></code></pre></div>
+<p>VC</p>
+<div class="hljs code-wrapper"><pre><code class="hljs clean">#<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;AFNetworking.h&quot;</span></code></pre></div>
+<h2 id="GET-方法获取并显示图片"><a href="#GET-方法获取并显示图片" class="headerlink" title="GET 方法获取并显示图片"></a>GET 方法获取并显示图片</h2><div class="hljs code-wrapper"><pre><code class="hljs objectivec"><span class="hljs-built_in">UIImageView</span> *imageNetView = [<span class="hljs-built_in">UIImageView</span> new];
+[<span class="hljs-keyword">self</span>.view addSubview: imageNetView];
+<span class="hljs-keyword">self</span>.ImageView = imageNetView;
+imageNetView.frame = <span class="hljs-built_in">CGRectMake</span>(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">200</span>);
+
+AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+<span class="hljs-comment">/* 知识点1：设置AFN采用什么样的方式来解析服务器返回的数据*/</span>
+
+ <span class="hljs-comment">//如果返回的是XML，那么告诉AFN，响应的时候使用XML的方式解析</span>
+<span class="hljs-comment">// manager.responseSerializer = [AFXMLParserResponseSerializer serializer];</span>
+
+ <span class="hljs-comment">//如果返回的就是二进制数据，那么采用默认二进制的方式来解析数据（HTTP）</span>
+ manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+ <span class="hljs-comment">//采用JSON的方式来解析数据</span>
+ <span class="hljs-comment">//manager.responseSerializer = [AFJSONResponseSerializer serializer];</span>
+ 
+  <span class="hljs-comment">//指定接收信号为image/png</span>
+ manager.responseSerializer.acceptableContentTypes = [<span class="hljs-built_in">NSSet</span> setWithObject:<span class="hljs-string">@&quot;image/png&quot;</span>];
+ 
+ [manager GET:<span class="hljs-string">@&quot;https://search-operate.cdn.bcebos.com/9dfdb7a4fa9dab231f5dd9b90dc91597.png&quot;</span> parameters:<span class="hljs-literal">nil</span> headers:<span class="hljs-literal">nil</span> progress:<span class="hljs-literal">nil</span> success:^(<span class="hljs-built_in">NSURLSessionDataTask</span> * _Nonnull task, <span class="hljs-keyword">id</span>  _Nullable responseObject) &#123;
+    
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@---%@&quot;</span>,[responseObject <span class="hljs-keyword">class</span>],responseObject);
+    <span class="hljs-keyword">self</span>.ImageView.image = [<span class="hljs-built_in">UIImage</span> imageWithData:responseObject]; <span class="hljs-comment">//NSData转UIimage</span>
+
+&#125; failure:^(<span class="hljs-built_in">NSURLSessionDataTask</span> * _Nullable task, <span class="hljs-built_in">NSError</span> * _Nonnull error) &#123;
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;请求失败--%@&quot;</span>,error);
+&#125;];
+</code></pre></div>
+<h2 id="通过-URL-下载文件"><a href="#通过-URL-下载文件" class="headerlink" title="通过 URL 下载文件"></a>通过 URL 下载文件</h2><div class="hljs code-wrapper"><pre><code class="hljs objectivec"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSURLSessionDownloadTask</span>* downloadTask;
+
+- (<span class="hljs-keyword">void</span>)downloadFromURL:(<span class="hljs-built_in">NSString</span> *)downloadURL
+&#123;
+    <span class="hljs-comment">/* 创建网络下载对象 */</span>
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[<span class="hljs-built_in">NSURLSessionConfiguration</span> defaultSessionConfiguration]];
+    <span class="hljs-comment">/* 下载地址 */</span>
+    <span class="hljs-built_in">NSURL</span> *url = [<span class="hljs-built_in">NSURL</span> URLWithString:downloadURL];
+    <span class="hljs-built_in">NSURLRequest</span> *request = [<span class="hljs-built_in">NSURLRequest</span> requestWithURL:url];
+    <span class="hljs-comment">/* 下载路径 */</span>
+    <span class="hljs-built_in">NSString</span> *path = [<span class="hljs-built_in">NSHomeDirectory</span>() stringByAppendingPathComponent:<span class="hljs-string">@&quot;Documents/Announcement&quot;</span>]; <span class="hljs-comment">// 指定下载到沙盒下新建的Announcement文件夹中</span>
+    <span class="hljs-built_in">NSFileManager</span> *fileManager = [<span class="hljs-built_in">NSFileManager</span> defaultManager];
+    <span class="hljs-comment">// 创建文件夹</span>
+    <span class="hljs-built_in">BOOL</span> isDir = <span class="hljs-literal">NO</span>;
+    <span class="hljs-built_in">BOOL</span> existed = [fileManager fileExistsAtPath:path isDirectory:&amp;isDir]; <span class="hljs-comment">// fileExistsAtPath 判断一个文件或目录是否有效，isDirectory判断是否一个目录</span>
+    <span class="hljs-keyword">if</span> (!(isDir &amp;&amp; existed)) &#123;
+        <span class="hljs-comment">// 在Document目录下创建一个Announcement目录</span>
+        [fileManager createDirectoryAtPath:path withIntermediateDirectories:<span class="hljs-literal">YES</span> attributes:<span class="hljs-literal">nil</span> error:<span class="hljs-literal">nil</span>];
+    &#125;
+    <span class="hljs-built_in">NSString</span> *filePath = [path stringByAppendingPathComponent:url.lastPathComponent];
+
+    <span class="hljs-comment">/* 开始请求下载 */</span>
+    <span class="hljs-keyword">self</span>.downloadTask = [manager downloadTaskWithRequest:request progress:^(<span class="hljs-built_in">NSProgress</span> * _Nonnull downloadProgress) &#123;
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;下载进度：%.0f％，线程：%@&quot;</span>, downloadProgress.fractionCompleted * <span class="hljs-number">100</span>, [<span class="hljs-built_in">NSThread</span> currentThread]);
+        <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;
+            <span class="hljs-comment">//进行UI操作（刷新进度条），需要切换到主线</span>
+        &#125;);
+
+    &#125; destination:^<span class="hljs-built_in">NSURL</span> * _Nonnull(<span class="hljs-built_in">NSURL</span> * _Nonnull targetPath, <span class="hljs-built_in">NSURLResponse</span> * _Nonnull response) &#123;
+        <span class="hljs-comment">/* 设定下载到的位置 */</span>
+        <span class="hljs-keyword">return</span> [<span class="hljs-built_in">NSURL</span> fileURLWithPath:filePath];
+
+    &#125; completionHandler:^(<span class="hljs-built_in">NSURLResponse</span> * _Nonnull response, <span class="hljs-built_in">NSURL</span> * _Nullable filePath, <span class="hljs-built_in">NSError</span> * _Nullable error) &#123;
+        [[[<span class="hljs-built_in">UIAlertView</span> alloc] initWithTitle:<span class="hljs-string">@&quot;下载完成&quot;</span> message:<span class="hljs-keyword">self</span>.downloadTask.response.suggestedFilename delegate:<span class="hljs-keyword">self</span> cancelButtonTitle:<span class="hljs-string">@&quot;知道了&quot;</span> otherButtonTitles: <span class="hljs-literal">nil</span>] show]; <span class="hljs-comment">// 弹出下载完成弹窗提示</span>
+    &#125;];
+    [<span class="hljs-keyword">self</span>.downloadTask resume];
+&#125;
+</code></pre></div>
+<h3 id="POST-登录用户名密码"><a href="#POST-登录用户名密码" class="headerlink" title="POST 登录用户名密码"></a>POST 登录用户名密码</h3><h4 id="ViewController-m"><a href="#ViewController-m" class="headerlink" title="ViewController.m"></a>ViewController.m</h4><div class="hljs code-wrapper"><pre><code class="hljs objectivec">- (<span class="hljs-keyword">void</span>)post &#123;
+    <span class="hljs-comment">//1.创建会话管理者</span>
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [<span class="hljs-built_in">NSSet</span> setWithObjects:<span class="hljs-string">@&quot;application/json&quot;</span>,<span class="hljs-string">@&quot;text/html&quot;</span>,<span class="hljs-string">@&quot;text/javascript&quot;</span>,<span class="hljs-string">@&quot;text/json&quot;</span>,<span class="hljs-string">@&quot;text/plain&quot;</span>, <span class="hljs-literal">nil</span>];
+    
+    <span class="hljs-comment">//2.创建参数</span>
+    <span class="hljs-built_in">NSMutableDictionary</span> *dict = [<span class="hljs-built_in">NSMutableDictionary</span> dictionary];
+    [dict setObject:<span class="hljs-string">@&quot;phoneAreaCode&quot;</span> forKey:<span class="hljs-string">@&quot;86&quot;</span>];
+    [dict setObject:<span class="hljs-string">@&quot;phoneNumber&quot;</span> forKey:<span class="hljs-string">@&quot;13766666666&quot;</span>];
+    [dict setObject:<span class="hljs-string">@&quot;password&quot;</span> forKey:<span class="hljs-string">@&quot;12345678&quot;</span>];
+    <span class="hljs-comment">//3.发送POST请求</span>
+    [manager POST:<span class="hljs-string">@&quot;http://cn.test.api.gethover.com/api/auth/login/phone&quot;</span>
+       parameters:dict headers:<span class="hljs-literal">nil</span> progress:<span class="hljs-literal">nil</span> success:^(<span class="hljs-built_in">NSURLSessionDataTask</span> * _Nonnull task, <span class="hljs-keyword">id</span>  _Nullable responseObject) &#123;
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;请求成功%@---%@&quot;</span>,[responseObject <span class="hljs-keyword">class</span>], responseObject);
+
+    &#125; failure:^(<span class="hljs-built_in">NSURLSessionDataTask</span> * _Nullable task, <span class="hljs-built_in">NSError</span> * _Nonnull error) &#123;
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;请求失败---%@&quot;</span>,error);
+    &#125;];
+&#125;</code></pre></div>
+<h4 id="解决POST-secure-connection-问题"><a href="#解决POST-secure-connection-问题" class="headerlink" title="解决POST secure connection 问题"></a>解决POST secure connection 问题</h4><p>报错信息:</p>
+<div class="hljs code-wrapper"><pre><code class="hljs routeros"><span class="hljs-builtin-name">Error</span> <span class="hljs-attribute">Domain</span>=NSURLErrorDomain <span class="hljs-attribute">Code</span>=-1022 <span class="hljs-string">&quot;The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.&quot;</span> UserInfo=&#123;<span class="hljs-attribute">NSLocalizedDescription</span>=The<span class="hljs-built_in"> resource </span>could <span class="hljs-keyword">not</span> be loaded because the App Transport Security<span class="hljs-built_in"> policy </span>requires the use of a secure connection<span class="hljs-built_in">..</span>.</code></pre></div>
+<p>解决方法:<br>Info.plist<br>Information Property List -&gt; App Transport Security Settings -&gt;Allow Arbitrary Loads:YES</p>
+<h2 id="实时监听网络"><a href="#实时监听网络" class="headerlink" title="实时监听网络"></a>实时监听网络</h2><div class="hljs code-wrapper"><pre><code class="hljs groovy">- (<span class="hljs-keyword">void</span>)AFNReachability
+&#123;
+    <span class="hljs-comment">//1.创建网络监听管理者</span>
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    <span class="hljs-comment">//2.监听网络状态的改变</span>
+    <span class="hljs-comment">/*</span>
+<span class="hljs-comment">     AFNetworkReachabilityStatusUnknown          = 未知</span>
+<span class="hljs-comment">     AFNetworkReachabilityStatusNotReachable     = 无网络</span>
+<span class="hljs-comment">     AFNetworkReachabilityStatusReachableViaWWAN = 3G 4G</span>
+<span class="hljs-comment">     AFNetworkReachabilityStatusReachableViaWiFi = WIFI</span>
+<span class="hljs-comment">     */</span>
+    [manager <span class="hljs-attr">setReachabilityStatusChangeBlock:</span>^(AFNetworkReachabilityStatus status) &#123;
+        <span class="hljs-keyword">switch</span> (status) &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-attr">AFNetworkReachabilityStatusUnknown:</span>
+                NSLog(@<span class="hljs-string">&quot;未知&quot;</span>);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-attr">AFNetworkReachabilityStatusNotReachable:</span>
+                NSLog(@<span class="hljs-string">&quot;无网络&quot;</span>);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-attr">AFNetworkReachabilityStatusReachableViaWWAN:</span>
+                NSLog(@<span class="hljs-string">&quot;3G,4G&quot;</span>);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-attr">AFNetworkReachabilityStatusReachableViaWiFi:</span>
+                NSLog(@<span class="hljs-string">&quot;WIFI&quot;</span>);
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-symbol">default:</span>
+                <span class="hljs-keyword">break</span>;
+        &#125;
+    &#125;];
+    <span class="hljs-comment">//3.开始监听</span>
+    [manager startMonitoring];
+&#125;</code></pre></div>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/OC/">OC</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/18/LeetCode-%E8%AE%B0%E5%BD%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode 记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/29/OC%20%E9%BB%91%E9%AD%94%E6%B3%95/">
+                        <span class="hidden-mobile">OC 黑魔法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="https://jsh-00.github.io/img/wechatMoney.png" srcset="/img/loading.gif" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'G-XHKH2BBGBT', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
