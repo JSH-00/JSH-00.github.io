@@ -177,6 +177,101 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2022/05/03/ReactiveObjC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">ReactiveObjC 常用方法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/03/ReactiveObjC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+          
+          
+            
+          
+          ReactiveObjC 常用方法基本类型
+RACSiganl 信号（类）
+RACSubscriber 订阅者（协议）
+RACDisposable 用于取消订阅或者清理资源，当信号发送完成或者发送错误的时候，就会自动触发它。 当你不想监听某个信号时，可以通过它主动取消订阅信号。
+RACSubject 信号提供者，自己可以充当信号，又能发送信号。通常用来代替代理，有了它，就不必要定义代理了。
+RAC
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-03 13:00" pubdate>
+              2022-05-03
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/04/15/weakSelf%E4%B8%8EstrongSelf/">weakSelf 与 strongSelf</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/04/15/weakSelf%E4%B8%8EstrongSelf/">
+          
+          
+            
+          
+          weakSelf 与 strongSelf
+避免循环引用的标准做法:weakSelf+strongSelf
+调试方法：打印引用计数来看是否 block 会使引用计数 +1
+printf(&quot;retain count:%ld\n&quot;, CFGetRetainCount((__bridge CFTypeRef)(self)));
+
+
+
+写法block 里面套 block
+- (void
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-04-15 13:00" pubdate>
+              2022-04-15
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2022/03/18/APP%E5%90%84%E7%A7%8D%E7%8A%B6%E6%80%81%E6%97%B6%E5%8F%91%E9%80%9A%E7%9F%A5%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0/">APP 各种状态时发通知调用函数</a>
       </h1>
 
@@ -520,92 +615,6 @@ directly access a property (get set)
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-09 20:00" pubdate>
               2021-11-09
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/07/iOS%20%E5%9C%86%E8%A7%92%E5%8F%8A%E6%80%A7%E8%83%BD/">iOS 圆角及性能</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/07/iOS%20%E5%9C%86%E8%A7%92%E5%8F%8A%E6%80%A7%E8%83%BD/">
-          
-          
-            
-          
-          iOS 圆角及性能普通圆角添加方式UIImageView *avatarImageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-avatarImageView.backgroundColor = [UIColor redColor];
-avatarImageView.clipsToBounds =
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-07 20:00" pubdate>
-              2021-11-07
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/03/NSKeyedArchiver%E5%BD%92%E6%A1%A3/">NSKeyedArchiver 归档</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/03/NSKeyedArchiver%E5%BD%92%E6%A1%A3/">
-          
-          
-            
-          
-          NSKeyedArchiver 归档NSKeyedArchiver 和 NSUserDefault 的区别
-NSUserDefault 只能存储基本数据类型，如 NSInteger NSString NSArray 但像 UIImage、自定义类就无法存入
-NSKeyedArchiver 可以将各种类型的对象存储到文件中，而不仅仅是字符串、数组和字典类型，利用NSKeyedAarchiver 类创
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-03 20:00" pubdate>
-              2021-11-03
             </time>
           </div>
         
