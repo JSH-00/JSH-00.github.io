@@ -177,6 +177,52 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/07/29/OC%20%E9%BB%91%E9%AD%94%E6%B3%95/">OC 黑魔法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/07/29/OC%20%E9%BB%91%E9%AD%94%E6%B3%95/">
+          
+          
+            
+          
+          黑魔法使用 category 对类及其子类的某方法进行重写。可用于页面数量统计等需求。
+举例重写 viewWillAppear 方法
+UIViewController+swizzling.h
+#import &quot;UIViewController+swizzling.h&quot;
+#import &lt;objc/runtime.h&gt;
+@implementation ViewCont
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-29 20:00" pubdate>
+              2021-07-29
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/07/09/%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E8%BF%87%E6%9C%9F%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%88%A0%E9%99%A4/">判断文件是否过期并自动删除</a>
       </h1>
 
@@ -566,56 +612,6 @@ clang: error: linker command failed with exit code 1 (use -v to
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Git/">Git</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">OC 中点语法 . 和 -&gt; 的区别</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
-          
-          
-            
-          
-          OC 中点语法 . 和 -&gt; 的区别
--&gt; 用于访问成员变量，但成员变量默认受保护，所以常常报错，手动设为public即可解决。
-. 用于访问类的属性，本质是调用setter、getter方法。
-
-成员变量不实现 getter 和 setter 方法
-定义时需要使用 @public 才能被外部访问
-外部使用 -&gt; 用于访问成员变量
-
-// Test.h
-@interface Te
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-02-22 20:00" pubdate>
-              2021-02-22
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
             
           </div>
         

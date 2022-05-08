@@ -177,6 +177,50 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2022/05/08/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4/">通过屏幕刷新显示实时时间、倒计时</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/08/%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BA%E6%97%B6%E9%97%B4/">
+          
+          
+            
+          
+          通过屏幕刷新显示实时时间、倒计时获取屏幕刷新率@property (nonatomic, strong) CADisplayLink *displayLink;
+- (void)viewDidLoad &#123;
+    [super viewDidLoad];
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self se
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-08 21:00" pubdate>
+              2022-05-08
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2022/05/03/ReactiveObjC%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">ReactiveObjC 常用方法</a>
       </h1>
 
@@ -326,7 +370,9 @@ printf(&quot;retain count:%ld\n&quot;, CFGetRetainCount((__bridge CFTypeRef)(sel
           各种延时操作延时执行方法（可以取消执行）// 5s后执行某方法
 NSString *toDoStr = @&quot;play&quot;;
 NSString *toDoStr2 = @&quot;play02&quot;;
-[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toDoMethod:) 
+
+// 如果已经 perform 但还没执行，取消上次 perform，并重新计时
+[NSObject cancelPreviousPerformRequestsWithTa
         </a>
       </p>
 
@@ -563,58 +609,6 @@ NSString*
             <i class="iconfont icon-date"></i>
             <time datetime="2021-11-30 20:00" pubdate>
               2021-11-30
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/11/09/KVC%E5%92%8CKVO/">KVC 和 KVO</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/11/09/KVC%E5%92%8CKVO/">
-          
-          
-            
-          
-          KVC和KVOKVC
-Key-Value Coding，键值编码，一种键值对间接访问机制，通过属性名称字符串间接访问属性。
-
-directly access a property (get set)
-
- 在某些情况下可以简化代码
-
-
-#pragma mark - KVC
-
-// 相当于 [myAccount setCurrentBalance:@(100.0)];
-[myAccount setVa
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-11-09 20:00" pubdate>
-              2021-11-09
             </time>
           </div>
         

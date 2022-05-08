@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      325 字
+      437 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      6
        分钟
     </span>
   
@@ -230,13 +230,16 @@
               <h1 id="各种延时操作"><a href="#各种延时操作" class="headerlink" title="各种延时操作"></a>各种延时操作</h1><h2 id="延时执行方法（可以取消执行）"><a href="#延时执行方法（可以取消执行）" class="headerlink" title="延时执行方法（可以取消执行）"></a>延时执行方法（可以取消执行）</h2><div class="hljs code-wrapper"><pre><code class="hljs pgsql">// <span class="hljs-number">5</span>s后执行某方法
 NSString *toDoStr = @&quot;play&quot;;
 NSString *toDoStr2 = @&quot;play02&quot;;
-[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toDoMethod:) <span class="hljs-keyword">object</span>:toDoStr]; // 如果已经 <span class="hljs-keyword">perform</span> 但还没执行，取消上次 <span class="hljs-keyword">perform</span>
-[self performSelector:@selector(toDoMethod:) withObject:toDoStr afterDelay:<span class="hljs-number">5</span>]; // <span class="hljs-number">5</span>s 后使用 toDoStr 调用 toDoMethod 方法
-&#125;
 
+// 如果已经 <span class="hljs-keyword">perform</span> 但还没执行，取消上次 <span class="hljs-keyword">perform</span>，并重新计时
+[NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toDoMethod:) <span class="hljs-keyword">object</span>:toDoStr]; 
+[self performSelector:@selector(toDoMethod:) withObject:toDoStr afterDelay:<span class="hljs-number">5</span>]; // <span class="hljs-number">5</span>s 后使用 toDoStr 调用 toDoMethod 方法
+
+
+// 如果已经 <span class="hljs-keyword">perform</span> 但还没执行，取消上次 <span class="hljs-keyword">perform</span>，使用 toDoStr2 调用，并重新计时
 [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(toDoMethod:) <span class="hljs-keyword">object</span>:toDoStr]; // 若使用 toDoStr 调用 toDoMethod 方法还没执行（还在<span class="hljs-number">5</span>s内）则取消执行
 [self performSelector:@selector(toDoMethod:) withObject:toDoStr2 afterDelay:<span class="hljs-number">5</span>]; // <span class="hljs-number">5</span>s 后使用 toDoStr2 调用 toDoMethod 方法
-&#125;</code></pre></div>
+</code></pre></div>
 <h2 id="执行动画，延时执行，执行一定时间后延时取消"><a href="#执行动画，延时执行，执行一定时间后延时取消" class="headerlink" title="执行动画，延时执行，执行一定时间后延时取消"></a>执行动画，延时执行，执行一定时间后延时取消</h2><div class="hljs code-wrapper"><pre><code class="hljs objectivec"><span class="hljs-comment">// delay:3, 3s 后执行动画</span>
 <span class="hljs-comment">// UIViewAnimationOptionAutoreverse 动画运行到结束点后仍然以动画方式回到初始点</span>
 <span class="hljs-comment">// [UIView setAnimationRepeatCount:10]; 重复10次</span>
@@ -270,6 +273,22 @@ show.frame = <span class="hljs-built_in">CGRectMake</span>(<span class="hljs-num
    dispatch<span class="hljs-constructor">_after(<span class="hljs-params">dispatch_time</span>(DISPATCH_TIME_NOW, (<span class="hljs-params">int64_t</span>)</span>(<span class="hljs-number">5</span><span class="hljs-operator"> * </span>NSEC_PER_SEC)), dispatch<span class="hljs-constructor">_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)</span>, ^&#123;
    <span class="hljs-literal">[<span class="hljs-identifier">self</span> <span class="hljs-identifier">delayDo</span>:@&quot;G<span class="hljs-identifier">lobal</span>-GCD&quot;]</span>;
    &#125;);</code></pre></div>
+<h2 id="NSTimer-方法"><a href="#NSTimer-方法" class="headerlink" title="NSTimer 方法"></a>NSTimer 方法</h2><div class="hljs code-wrapper"><pre><code class="hljs objectivec"><span class="hljs-built_in">NSDate</span> *scheduledTime = [<span class="hljs-built_in">NSDate</span> dateWithTimeIntervalSinceNow:<span class="hljs-number">10.0</span>]; <span class="hljs-comment">//设置开始执行的时间为：从现在开始计时，10s后</span>
+<span class="hljs-built_in">NSString</span> *customUserObject = <span class="hljs-string">@&quot;To demo userInfo&quot;</span>;
+<span class="hljs-built_in">NSTimer</span> *timer = [[<span class="hljs-built_in">NSTimer</span> alloc] initWithFireDate:scheduledTime
+                                          interval:<span class="hljs-number">2</span>
+                                            target:<span class="hljs-keyword">self</span>
+                                          selector:<span class="hljs-keyword">@selector</span>(task:)
+                                          userInfo:customUserObject
+                                           repeats:<span class="hljs-literal">YES</span>];
+<span class="hljs-built_in">NSRunLoop</span> *runLoop = [<span class="hljs-built_in">NSRunLoop</span> currentRunLoop];
+[runLoop addTimer:timer forMode:<span class="hljs-built_in">NSDefaultRunLoopMode</span>];
+
+
+- (<span class="hljs-keyword">void</span>)task:(<span class="hljs-keyword">id</span>)sender&#123;
+    <span class="hljs-built_in">NSTimer</span> *localTimer = (<span class="hljs-built_in">NSTimer</span> *)sender;
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;Schedule task has executed with this user info: %@&quot;</span>, [localTimer userInfo]);
+&#125;</code></pre></div>
 <p><a target="_blank" rel="noopener" href="https://m.yisu.com/zixun/198074.html">参考链接</a></p>
 
             </div>
