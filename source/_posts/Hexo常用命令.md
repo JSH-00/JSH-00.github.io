@@ -42,3 +42,15 @@ hexo server -i 192.168.1.1
 运行`hexo n "XXXXXX"`，生成`XXXXX.md`博文时就会在`/source/_posts`目录下生成 XXXXXX 的文件夹，将你想在 XXXXX 博文中插入的照片放置到这个同名文件夹中即可，图片的命名随意。
 ### 添加图片
 在想添加的位置写入`![](图片名字.图片格式)`，如`![](1.png)`。
+
+## 报错处理
+```
+报错：
+TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received an instance of Object
+......
+```
+
+处理方式：降级node
+查看版本 `node -v`
+`nvm install 12` 或 `brew install node@12`
+`nvm use 12` 或 `brew link --force --overwrite node@12`
