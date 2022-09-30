@@ -256,7 +256,7 @@ git merge FETCH_HEAD    <span class="hljs-regexp">//</span>将拉取下来的最
 <div class="hljs code-wrapper"><pre><code class="hljs erlang">git checkout .</code></pre></div>
 <p>删除没有 git add 的文件</p>
 <div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">git clean -d fx</span></code></pre></div>
-<h3 id="场景2：已经-commit，但是未-push-到远端"><a href="#场景2：已经-commit，但是未-push-到远端" class="headerlink" title="场景2：已经 commit，但是未 push 到远端"></a>场景2：已经 commit，但是未 push 到远端</h3><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><div class="hljs code-wrapper"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD^</span>
+<h3 id="场景2：已经-commit，但是未-push-到远端"><a href="#场景2：已经-commit，但是未-push-到远端" class="headerlink" title="场景2：已经 commit，但是未 push 到远端"></a>场景2：已经 commit，但是未 push 到远端</h3><h4 id="回退到上一个版本"><a href="#回退到上一个版本" class="headerlink" title="回退到上一个版本"></a>回退到上一个版本</h4><div class="hljs code-wrapper"><pre><code class="hljs pgsql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD~</span>
 git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD~2 //具有破坏性</span>
 git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--mixed HEAD~2 // 有所保留</span></code></pre></div>
 <h4 id="更改-commit-内容（未-push）"><a href="#更改-commit-内容（未-push）" class="headerlink" title="更改 commit 内容（未 push）"></a>更改 commit 内容（未 push）</h4><div class="hljs code-wrapper"><pre><code class="hljs pgsql">git <span class="hljs-keyword">commit</span> <span class="hljs-comment">--amend</span></code></pre></div>

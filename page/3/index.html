@@ -177,6 +177,233 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2021/10/13/Fat%E8%84%9A%E6%9C%AC/">Fat 脚本</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/13/Fat%E8%84%9A%E6%9C%AC/">
+          
+          
+            
+          
+          Fat 脚本
+用于 xcode build 时自动生成可被真机和模拟器同时使用的 .a 文件
+
+if [ &quot;$&#123;ACTION&#125;&quot; = &quot;build&quot; ]
+then
+
+
+#要build的target名
+target_Name=$&#123;PROJECT_NAME&#125;
+echo &quot;target_Name=$&#123;ta
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-13 20:00" pubdate>
+              2021-10-13
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/23/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%E6%93%8D%E4%BD%9C/">二进制位操作</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/23/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%BD%8D%E6%93%8D%E4%BD%9C/">
+          
+          
+            
+          
+          二进制位操作
+
+
+符号
+描述
+运算规则
+
+
+
+&amp;
+与
+1&amp;1=1; 1&amp;0=0; 0&amp;1=0; 0&amp;0=0;
+
+
+|
+或
+1|1=1; 1|0=1; 0|1=1; 0|0=0;
+
+
+~
+非
+~0=1; ~1=0;
+
+
+^
+异或
+1^1=0; 1^0=1; 0^1=1; 0^0=0;
+
+
+&lt;&lt;
+左移
+高位丢弃，低位补 0
+
+
+&gt;&gt;
+右移
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-23 20:00" pubdate>
+              2021-09-23
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LeetCode/">LeetCode</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/18/LeetCode-%E8%AE%B0%E5%BD%95/">LeetCode 记录</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/18/LeetCode-%E8%AE%B0%E5%BD%95/">
+          
+          
+            
+          
+          LeetCode 记录二进制特性判断是否是 2 的幂次方
+n 是 2 进制的约数 （非进制方法）return n &gt; 0 &amp;&amp; (1&lt;&lt;30) % n == 0
+-n 与操作
+-n 是 n 二进制的补码 +1
+
+
+
+return n &gt; 0 &amp;&amp; (n &amp; -n) == n;
+
+(n - 1) 与操作
+(n-1)
+
+
+
+return 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-18 20:00" pubdate>
+              2021-09-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LeetCode/">LeetCode</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/09/11/AFNetworking%20%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">AFNetworking 常用方法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/09/11/AFNetworking%20%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">
+          
+          
+            
+          
+          AFNetworking 常用方法pod 引入Podfile
+pod &#x27;AFNetworking&#x27;, &#x27;~&gt; 4.0&#x27;
+VC
+#import &quot;AFNetworking.h&quot;
+GET 方法获取并显示图片UIImageView *imageNetView = [UIImageView new];
+[self.view addSubvi
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-09-11 20:00" pubdate>
+              2021-09-11
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2021/07/29/OC%20%E9%BB%91%E9%AD%94%E6%B3%95/">OC 黑魔法</a>
       </h1>
 
@@ -434,196 +661,11 @@ protocol定义产品拥有的属性及方法
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/19/%20UIAlertController%20%E5%BC%B9%E7%AA%97/">UIAlertController 弹窗</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/19/%20UIAlertController%20%E5%BC%B9%E7%AA%97/">
-          
-          
-            
-          
-          UIAlertController 弹窗通过 UIAlertController 弹出弹窗（iOS 8 以上）
-#import &quot;ViewController.h&quot;
-
-@interface ViewController ()
-@property (nonatomic, strong)UIAlertController *alertController;
-@end
-
-@imple
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-19 20:00" pubdate>
-              2021-03-19
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/19/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%20Duplicate%20symbols%20for%20architecture%20x86_64/">编译错误 Duplicate symbols for architecture x86_64</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/19/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%20Duplicate%20symbols%20for%20architecture%20x86_64/">
-          
-          
-            
-          
-          编译错误 Duplicate symbols for architecture x86_64错误信息....../*Objects-normal/x86_64/XXXX.o
-ld: 415 duplicate symbols for architecture x86_64
-clang: error: linker command failed with exit code 1 (use -v to
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-19 20:00" pubdate>
-              2021-03-19
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">UIScrollView 向下偏移</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">
-          
-          
-            
-          
-          UIScrollView 向下偏移遇到问题
-当 scrollView 是其父视图上的第一个子视图，且 navigationBar 不隐藏的情况下，添加到 scrollView 里的视图，都会默认下移64个像素。
-继承 UIScrollview 的 UITableview 也会出现这个问题。
-
-解决方法if (@available(iOS 11.0, *))&#123;
-    self.autom
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-15 20:00" pubdate>
-              2021-03-15
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OC/">OC</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/03/13/iOS%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6/">Git 忽略文件</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/03/13/iOS%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6/">
-          
-          
-            
-          
-          Git 忽略文件ios 忽略文件 .gitignore
-
-# Created by https://www.gitignore.io/api/xcode
-
-### Xcode ###
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore &amp; S
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-03-13 20:00" pubdate>
-              2021-03-13
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Git/">Git</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
   
