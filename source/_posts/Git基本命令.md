@@ -71,7 +71,7 @@ git clean -d fx
 #### 回退到上一个版本 
 
 ```
-git reset --hard HEAD^
+git reset --hard HEAD~
 git reset --hard HEAD~2 //具有破坏性
 git reset --mixed HEAD~2 // 有所保留
 ```
