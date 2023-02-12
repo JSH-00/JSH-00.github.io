@@ -45,7 +45,7 @@ hexo server -i 192.168.1.1
 
 ## 报错处理
 ```
-报错：
+部署时报错：
 TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received an instance of Object
 ......
 ```
@@ -54,3 +54,7 @@ TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received 
 查看版本 `node -v`
 `nvm install 12` 或 `brew install node@12`
 `nvm use 12` 或 `brew link --force --overwrite node@12`
+
+查看/切换node版本
+`nvm ls`
+`nvm use 12.22.12`

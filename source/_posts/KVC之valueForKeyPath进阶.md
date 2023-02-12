@@ -1,7 +1,7 @@
 ---
 layout: git
 title: KVC之valueForKeyPath进阶
-date: 2022-12-10 20:00:00
+date: 2023-01-22 20:00:00
 tags: OC
 --- 
 
@@ -21,17 +21,16 @@ tags: OC
 
 ### 把字典中的key单独生成数组
 
-```
+```   
     NSDictionary *dic1 = @{@"city":@"北京",@"count":@"22"};
     NSDictionary *dic2 = @{@"city":@"上海",@"count":@"18"};
     NSDictionary *dic3 = @{@"city":@"深圳",@"count":@"17"};
-    
     NSArray *arr = @[dic1,dic2,dic3];
     
     NSLog(@"city:%@",[arr valueForKeyPath:@"city"]);
     NSLog(@"count:%@",[arr valueForKeyPath:@"count"]);
-    
-```  
+```
+
 
 ```
 输出结果为：
@@ -49,6 +48,7 @@ tags: OC
 ```
 
 ### 把数组中的数取整
+
 ```
     NSArray *array = [NSArray arrayWithObjects:@"10.11",@"20.22", nil];
     NSArray *resultArray = [array valueForKeyPath:@"doubleValue.intValue"];

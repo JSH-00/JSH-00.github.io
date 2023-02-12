@@ -10,5 +10,5 @@ tags: OC
 ```  
    NSString *showVersion = @"1.6.0";
    NSString *lastAppVersion =  @"1.5.9";
-    BOOL isLowerThanShowVersion = ([lastAppVersion compare:showVersion options:NSNumericSearch] == NSOrderedAscending);
+   BOOL isLowerThanShowVersion = ([lastAppVersion compare:showVersion options:NSNumericSearch] == NSOrderedAscending);
 ```

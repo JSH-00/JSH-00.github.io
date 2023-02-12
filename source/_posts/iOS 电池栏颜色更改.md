@@ -23,10 +23,10 @@ if (@available(iOS 13.0, *)) {
 
 ### 电池栏更改颜色
 
-info.plist
-View controller-based status bar appearance
-NO
+> info.plist
+> View controller-based status bar appearance
+> NO
 
-Status bar style
-黑底白字/白底黑字
-Dark Content/Light Content
+> Status bar style
+> 黑底白字/白底黑字
+> Dark Content/Light Content
