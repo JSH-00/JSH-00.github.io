@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      239 字
+      254 字
     </span>
   
 
@@ -237,10 +237,11 @@
 <h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
 <h3 id="生成-md-及图片文件夹"><a href="#生成-md-及图片文件夹" class="headerlink" title="生成 .md 及图片文件夹"></a>生成 .md 及图片文件夹</h3><p>运行<code>hexo n &quot;XXXXXX&quot;</code>，生成<code>XXXXX.md</code>博文时就会在<code>/source/_posts</code>目录下生成 XXXXXX 的文件夹，将你想在 XXXXX 博文中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
 <h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，如<code>![](1.png)</code>。</p>
-<h2 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h2><div class="hljs code-wrapper"><pre><code class="hljs smali">报错：
+<h2 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h2><div class="hljs code-wrapper"><pre><code class="hljs smali">部署时报错：
 TypeError [ERR_INVALID_ARG_TYPE]: The <span class="hljs-string">&quot;mode&quot;</span> argument must be integer. Received an<span class="hljs-built_in"> instance </span>of Object
 <span class="hljs-keyword">.</span>.....</code></pre></div>
 <p>处理方式：降级node<br>查看版本 <code>node -v</code><br><code>nvm install 12</code> 或 <code>brew install node@12</code><br><code>nvm use 12</code> 或 <code>brew link --force --overwrite node@12</code></p>
+<p>查看/切换node版本<br><code>nvm ls</code><br><code>nvm use 12.22.12</code></p>
 
             </div>
             <hr>
