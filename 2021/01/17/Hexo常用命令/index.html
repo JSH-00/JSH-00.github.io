@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
 
 
 
@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Hexo 常用命令 - Hexo</title>
+  <title>Hexo 常用命令 - Billie&#39;s Technology Sharing</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"G-XHKH2BBGBT","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"jsh-00.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"G-XHKH2BBGBT","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      48 字
+      254 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -227,11 +227,22 @@
             <h1 style="display: none">Hexo 常用命令</h1>
             
             <div class="markdown-body">
-              <h1 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h1><h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span></code></pre></div>
+              <h1 id="Hexo-常用命令"><a href="#Hexo-常用命令" class="headerlink" title="Hexo 常用命令"></a>Hexo 常用命令</h1><h2 id="安装-Hexo-基于node"><a href="#安装-Hexo-基于node" class="headerlink" title="安装 Hexo (基于node)"></a>安装 Hexo (基于node)</h2><div class="hljs code-wrapper"><pre><code class="hljs avrasm">sudo npm install -g hexo-<span class="hljs-keyword">cli</span></code></pre></div>
+<h2 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span></code></pre></div>
 <h2 id="启动服务预览"><a href="#启动服务预览" class="headerlink" title="启动服务预览"></a>启动服务预览</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo s</span></code></pre></div>
 <h2 id="生成并部署"><a href="#生成并部署" class="headerlink" title="生成并部署"></a>生成并部署</h2><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d -g</span></code></pre></div>
 <h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h3><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">hexo</span> server -p <span class="hljs-number">5000</span></code></pre></div>
 <h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> server -i <span class="hljs-number">192.168.1.1</span></code></pre></div>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><h3 id="设置站点配置"><a href="#设置站点配置" class="headerlink" title="设置站点配置"></a>设置站点配置</h3><p>进入<code>_config.yml</code>，将<code>post_asset_folder: false</code>改为<code>post_asset_folder: true</code></p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p><code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code></p>
+<h3 id="生成-md-及图片文件夹"><a href="#生成-md-及图片文件夹" class="headerlink" title="生成 .md 及图片文件夹"></a>生成 .md 及图片文件夹</h3><p>运行<code>hexo n &quot;XXXXXX&quot;</code>，生成<code>XXXXX.md</code>博文时就会在<code>/source/_posts</code>目录下生成 XXXXXX 的文件夹，将你想在 XXXXX 博文中插入的照片放置到这个同名文件夹中即可，图片的命名随意。</p>
+<h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><p>在想添加的位置写入<code>![](图片名字.图片格式)</code>，如<code>![](1.png)</code>。</p>
+<h2 id="报错处理"><a href="#报错处理" class="headerlink" title="报错处理"></a>报错处理</h2><div class="hljs code-wrapper"><pre><code class="hljs smali">部署时报错：
+TypeError [ERR_INVALID_ARG_TYPE]: The <span class="hljs-string">&quot;mode&quot;</span> argument must be integer. Received an<span class="hljs-built_in"> instance </span>of Object
+<span class="hljs-keyword">.</span>.....</code></pre></div>
+<p>处理方式：降级node<br>查看版本 <code>node -v</code><br><code>nvm install 12</code> 或 <code>brew install node@12</code><br><code>nvm use 12</code> 或 <code>brew link --force --overwrite node@12</code></p>
+<p>查看/切换node版本<br><code>nvm ls</code><br><code>nvm use 12.22.12</code></p>
+
             </div>
             <hr>
             <div>
@@ -253,6 +264,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/01/18/MAC%20%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%96%B9%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MAC 设置代理方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

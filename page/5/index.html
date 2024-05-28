@@ -1,0 +1,845 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Billie&#39;s Technology Sharing</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"jsh-00.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":"G-XHKH2BBGBT","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 35vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Billie</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="道远知骥，码行万里">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/19/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%20Duplicate%20symbols%20for%20architecture%20x86_64/">编译错误 Duplicate symbols for architecture x86_64</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/19/%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF%20Duplicate%20symbols%20for%20architecture%20x86_64/">
+          
+          
+            
+          
+          编译错误 Duplicate symbols for architecture x86_64错误信息....../*Objects-normal/x86_64/XXXX.o
+ld: 415 duplicate symbols for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-19 20:00" pubdate>
+              2021-03-19
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">UIScrollView 向下偏移</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/15/UIScrollView%20%E5%90%91%E4%B8%8B%E5%81%8F%E7%A7%BB/">
+          
+          
+            
+          
+          UIScrollView 向下偏移遇到问题
+当 scrollView 是其父视图上的第一个子视图，且 navigationBar 不隐藏的情况下，添加到 scrollView 里的视图，都会默认下移64个像素。
+继承 UIScrollview 的 UITableview 也会出现这个问题。
+
+解决方法if (@available(iOS 11.0, *))&#123;
+    self.autom
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-15 20:00" pubdate>
+              2021-03-15
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/03/13/iOS%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6/">Git 忽略文件</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/03/13/iOS%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6/">
+          
+          
+            
+          
+          Git 忽略文件ios 忽略文件 .gitignore
+
+# Created by https://www.gitignore.io/api/xcode
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore &amp; S
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-03-13 20:00" pubdate>
+              2021-03-13
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Git/">Git</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">OC 中点语法 . 和 -&gt; 的区别</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/22/OC%E4%B8%AD%E7%82%B9%E8%AF%AD%E6%B3%95%20.%20%E5%92%8C%20-%3E%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
+          
+          
+            
+          
+          OC 中点语法 . 和 -&gt; 的区别
+-&gt; 用于访问成员变量，但成员变量默认受保护，所以常常报错，手动设为public即可解决。
+. 用于访问类的属性，本质是调用setter、getter方法。
+
+成员变量不实现 getter 和 setter 方法
+定义时需要使用 @public 才能被外部访问
+外部使用 -&gt; 用于访问成员变量
+
+// Test.h
+@interface Te
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-22 20:00" pubdate>
+              2021-02-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/22/%E8%AE%BE%E7%BD%AE%20UIButton%20%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E7%89%87%E8%B7%9D%E7%A6%BB/">设置 UIButton 文字与图片距离</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/22/%E8%AE%BE%E7%BD%AE%20UIButton%20%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E7%89%87%E8%B7%9D%E7%A6%BB/">
+          
+          
+            
+          
+          设置UIButton图片大小、文字与图片距离CGFloat padding = 0; // 设置图片与文字的距离
+CGFloat zoom = 8; // 设置图片缩放大小
+btn.titleEdgeInsets = UIEdgeInsetsMake(0, padding/2, 0, -padding/2);
+btn.imageEdgeInsets = UIEdgeInsetsMake(zoom,
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-22 20:00" pubdate>
+              2021-02-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/01/GCD%20dispatch/">GCD dispatch</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/01/GCD%20dispatch/">
+          
+          
+            
+          
+          GCD dispatch同步 &amp;&amp; 异步 &amp;&amp; 串型 &amp;&amp; 并发
+同步：没有开启新线程的能力
+所有任务都在 begin 和 end 之间执行
+串型和并发效果一样，都不开启新线程
+
+
+异步：有开启新线程的能力，但是否开启视情况而定
+若加入串型，所有任务都在 begin 和 end 之后逐个执行
+若加入并发，所有任务都在 begin 之后执行
+
+
+串型：
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-01 14:00" pubdate>
+              2021-02-01
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/01/UISegmentedControl/">UISegmentedControl</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/01/UISegmentedControl/">
+          
+          
+            
+          
+          UISegmentedControlUISegmentedControl *topTitle = [[UISegmentedControl alloc]initWithItems:@[@&quot;推荐&quot;, @&quot;附近&quot;]];
+topTitle.frame = CGRectMake(self.view.bounds.size.width * 0.25, self.vie
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-01 13:00" pubdate>
+              2021-02-01
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/OC/">OC</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/18/MAC%20%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%96%B9%E6%B3%95/">MAC 设置代理方法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/18/MAC%20%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%96%B9%E6%B3%95/">
+          
+          
+            
+          
+          MAC 设置代理方法mac 使用命令行更换代理。可根据此设计脚本，实现一键设置代理，减少开启/关闭代理流程。
+预览 networksetup 基本功能networksetup -h
+查看当前 net work servicesnetworksetup -listallnetworkservices
+设置代理开启
+sudo networksetup -setwebproxy &quot;Wi-Fi&
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-18 09:00" pubdate>
+              2021-01-18
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MacOS/">MacOS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Hexo 常用命令</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+          
+          
+            
+          
+          Hexo 常用命令安装 Hexo (基于node)sudo npm install -g hexo-cli
+清除缓存hexo clean
+启动服务预览hexo s
+生成并部署hexo d -g
+服务器更改端口hexo server -p 5000
+自定义 IPhexo server -i 192.168.1.1
+插入图片设置站点配置进入_config.yml，将post_asset_folder:
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-17 20:00" pubdate>
+              2021-01-17
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/">Swift APPDelegate 文件写法</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/10/Swift%20AppDelegate%20%E6%96%87%E4%BB%B6%E5%86%99%E6%B3%95/">
+          
+          
+            
+          
+          通过导航视图控制器设置根视图AppDelegate.swift
+import UIKit
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate &#123;
+
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFi
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-10 17:00" pubdate>
+              2021-01-10
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Swift/">Swift</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/4/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'G-XHKH2BBGBT', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
